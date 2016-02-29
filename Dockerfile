@@ -3,14 +3,14 @@ MAINTAINER Jonathon Leight <jonathon.leight@jleight.com>
 
 ENV JAVA_HOME     /usr/lib/jvm/java-8-openjdk-amd64
 
-ENV HBASE_VERSION 1.0.1.1
+ENV HBASE_VERSION 1.1.3
 ENV HBASE_BASEURL http://apache.org/dist/hbase/stable
 ENV HBASE_PACKAGE hbase-${HBASE_VERSION}-bin.tar.gz
 ENV HBASE_URL     ${HBASE_BASEURL}/${HBASE_PACKAGE}
 ENV HBASE_HOME    /opt/hbase
 ENV HBASE_DATA    /var/opt/hbase
 
-ENV OTSDB_VERSION 2.1.0
+ENV OTSDB_VERSION 2.2.0
 ENV OTSDB_GITHUB  https://github.com/OpenTSDB/opentsdb
 ENV OTSDB_BASEURL ${OTSDB_GITHUB}/releases/download/v${OTSDB_VERSION}
 ENV OTSDB_PACKAGE opentsdb-${OTSDB_VERSION}_all.deb
@@ -22,6 +22,7 @@ RUN set -x \
   && apt-get install -y \
     curl \
     supervisor \
+    gnuplot \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
     /tmp/* \

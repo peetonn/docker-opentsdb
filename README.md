@@ -12,7 +12,7 @@ rule and run the container:
 
     $ docker run \
         -p 4242:4242 \
-        jleight/opentsdb
+        peetonn/opentsdb
 
 Usage
 -----
@@ -27,12 +27,12 @@ A data container can be created by running the following command:
 
     $ docker create \
         --name opentsdb-data \
-        jleight/opentsdb
+        peetonn/opentsdb
 
 The application container can then be started by running:
 
     $ docker run \
-        --name confluence \
+        --name opentsdb \
         --volumes-from opentsdb-data \
         -p 4242:4242 \
-        jleight/opentsdb
+        peetonn/opentsdb
